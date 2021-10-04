@@ -174,8 +174,8 @@ ${joinDependencies(dependencies)}
 //// You can use the lines below instead of the "com.badlogicgames.gdx:gdx-backend-gwt" dependencies.
 //// If you do, follow the steps at https://github.com/tommyettinger/gdx-backends#gwt-290-support
 //// and you can use GWT 2.9.0, which gives you access to Java 11 language features.
-//	implementation "com.github.tommyettinger:gdx-backend-gwt:1.100.0"
-//	implementation "com.github.tommyettinger:gdx-backend-gwt:1.100.0:sources"
+//	implementation "com.github.tommyettinger:gdx-backend-gwt:1.100.1"
+//	implementation "com.github.tommyettinger:gdx-backend-gwt:1.100.1:sources"
 }
 
 import org.akhikhl.gretty.AppBeforeIntegrationTestTask
@@ -272,7 +272,8 @@ tasks.draftCompileGwt.dependsOn(addSource)
 tasks.checkGwt.dependsOn(addSource)
 checkGwt.war = file("war")
 
-sourceCompatibility = 8.0
+// You can change the version below to JavaVersion.VERSION_11 if you use the 2.9.0 backend.
+sourceCompatibility = JavaVersion.VERSION_1_8
 sourceSets.main.java.srcDirs = [ "src/main/java/" ]
 
 eclipse.project.name = appName + "-html"

@@ -11,7 +11,7 @@ import com.github.czyzby.setup.views.Extension
  * Current version of KTX libraries.
  * @author MJ
  */
-const val KTX_VERSION = "1.10.0-b1"
+const val KTX_VERSION = "1.10.0-b3"
 
 /**
  * Kotlin utilities for Scene2D actors API.
@@ -274,6 +274,21 @@ class KtxPreferences : ThirdPartyExtension() {
 
     override fun initiateDependencies(project: Project) {
         addDependency(project, Core.ID, "io.github.libktx:ktx-preferences")
+    }
+}
+
+/**
+ * libGDX reflection utilities for applications developed with Kotlin.
+ * @author MJ
+ */
+@Extension
+class KtxReflect : ThirdPartyExtension() {
+    override val id = "ktxReflect"
+    override val defaultVersion = KTX_VERSION
+    override val url = "https://github.com/libktx/ktx/tree/master/reflect"
+
+    override fun initiateDependencies(project: Project) {
+        addDependency(project, Core.ID, "io.github.libktx:ktx-reflect")
     }
 }
 
